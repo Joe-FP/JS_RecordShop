@@ -7,11 +7,11 @@ const Record = function(artist, title, genre, price){
 
 Record.prototype.printDetails = function(){
   let str;
-  str = 'Artist: ' + this.artist + '\n'
-        + 'Title: ' + this.title + '\n'
-        + 'Genre: ' + this.genre + '\n'
-        + 'Price: ' + this.price;
-  return str;
+  str = 'Artist: ' + this.artist
+        + '  Title: ' + this.title
+        + '  Genre: ' + this.genre
+        + '  Price: ' + this.price;
+  console.log(str);
 }
 
 module.exports = Record;
