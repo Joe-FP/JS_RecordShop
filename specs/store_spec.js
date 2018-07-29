@@ -54,7 +54,7 @@ describe("Store", function(){
     assert.strictEqual(actual, expected);
   });
 
-  it("store can view all record of a given genre", function(){
+  it("store can view all records of a given genre", function(){
     let expected = [record1, record2];
     let actual = store.byGenre('Rock');
     assert.deepStrictEqual(actual, expected);

@@ -1,12 +1,24 @@
-const Customer = function(name){
+const Customer = function(name, wallet){
   this.name = name;
   this.collection = [];
-  this.wallet = 50;
+  this.wallet = wallet;
 }
 
 Customer.prototype.buyRecord = function(record){
-  this.collection.push(record);
-  this.wallet -= record.price;
+// check they can afford the record
+  if(this.wallet >= record.price){
+    this.collection.push(record);
+    this.wallet -= record.price;
+  }
+}
+
+Customer.prototype.sellRecord = function(record){
+  // check they have the record
+  if(this.collection.includes(record)){
+    let index = this.collection.indexOf(record);
+    this.collection.splice(index, 1);
+    this.wallet += record.price;
+  }
 }
 
 
