@@ -4,12 +4,10 @@ const Customer = function(name){
   this.wallet = 50;
 }
 
-Record.prototype.buyRecord = function(){
-
+Customer.prototype.buyRecord = function(record){
+  this.collection.push(record);
+  this.wallet -= record.price;
 }
 
-Record.prototype.sellRecord = function(){
-
-}
 
 module.exports = Customer;

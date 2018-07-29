@@ -36,11 +36,11 @@ describe("Store", function(){
 
   it("store should be able to sell records", function(){
     store.sellRecord(record3);
-    //
+    // sold record should be removed from store inventory
     let expected_inventory = [record1, record2];
     let actual_inventory = store.inventory;
     assert.deepStrictEqual(actual_inventory, expected_inventory);
-    //
+    // store balance should increase by sold record price
     let expected_balance = 11;
     let actual_balance = store.balance;
     assert.strictEqual(actual_balance, expected_balance);
