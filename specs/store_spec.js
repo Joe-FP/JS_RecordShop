@@ -12,14 +12,13 @@ describe("Store", function(){
     record1 = new Record('Fleetwood Mac', 'Rumours', 'Rock', 9);
     record2 = new Record('REO Speedwagon', 'Hi Infidelity', 'Rock', 12.5);
     record3 = new Record('John Denver', 'Higher Ground', 'Country', 11);
-    store.addRecord(record1);
-    store.addRecord(record2);
-    store.addRecord(record3);
+    let arrRecords = [record1, record2, record3]
+    store.addRecords(arrRecords);
   })
 
   it("store should be able to add records", function(){
     let newRecord = new Record('some artist', 'some album', 'some genre', 10);
-    store.addRecord(newRecord);
+    store.addRecords([newRecord]);
     let expected = [record1, record2, record3, newRecord];
     let actual = store.inventory;
     assert.deepStrictEqual(actual, expected);

@@ -7,8 +7,8 @@ const Store = function(name, city){
   this.balance = 0;
 }
 
-Store.prototype.addRecord = function(record){
-  this.inventory.push(record);
+Store.prototype.addRecords = function(records){
+  Array.prototype.push.apply(this.inventory, records);
 }
 
 Store.prototype.printInventoryDetails = function(){
@@ -25,8 +25,8 @@ Store.prototype.sellRecord = function(record){
 
 Store.prototype.reportFinances = function(){
   let storeBalance = this.balance;
-  let iValue = _.sumBy(this.inventory, "price");
-  return 'Store balance: £' + storeBalance + ', Inventory value: £' + iValue;
+  let inventoryValue = _.sumBy(this.inventory, "price");
+  return 'Store balance: £' + storeBalance + ', Inventory value: £' + inventoryValue;
 }
 
 Store.prototype.byGenre = function(genre){
